@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      :root {
+        --document-width: 800px;
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      main {
+        display: flex;
+        justify-content: center;
+      }
+
+      iframe {
+        width: var(--document-width);
+        border: 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <main />
+    <script type="module" src="/src/index.js"></script>
+  </body>
+</html>
