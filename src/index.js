@@ -1,12 +1,12 @@
 import html from './html.js'
 
-const baseUrl = '/.netlify/functions'
+const documentApiUrl = '/api/document'
 const getDocumentId = () => new URLSearchParams(location.search).get('id')
 
 /** @type {(props: { id: string }) => HTMLIFrameElement}} */
 const Document = ({ id }) => html`
   <iframe
-    src="${baseUrl}/document/${id}"
+    src="${documentApiUrl}/${id}"
     scrolling="no"
     onLoad=${(e) => {
       /** @type {HTMLIFrameElement} */ const iframe = e.target

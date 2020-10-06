@@ -1,8 +1,11 @@
-const http = require('./src/http')
-const { get } = require('./src/request')
+const { default: axios } = require('axios')
+const http = require('lessttp')
+const path = require('path')
+
 const baseUrl = '/.netlify/functions'
-const filename = require('path').parse(__filename).name
-const getDocumentUrl = (id) => {
+const filename = path.parse(__filename).name
+
+const getDocumentUrl = (/** @type {string} */ id) => {
   return `https://docs.google.com/document/d/e/${id}/pub?embedded=true`
 }
 
@@ -20,7 +23,7 @@ exports.handler = http.function({
   path: `${baseUrl}/${filename}/:id`,
   async handler(request) {
     const { id } = request.params
-    const { data: documentContent } = await get(getDocumentUrl(id))
+    const { data: documentContent } = await axios.get(getDocumentUrl(id))
     return {
       body: documentContent,
       headers: {
