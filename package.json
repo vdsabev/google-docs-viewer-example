@@ -1,12 +1,7 @@
 {
-  "name": "google-docs-viewer-example",
   "version": "1.0.0",
   "private": true,
   "scripts": {
     "start": "netlify dev"
-  },
-  "dependencies": {
-    "axios": "0.20.0",
-    "lessttp": "0.2.3"
   }
 }
