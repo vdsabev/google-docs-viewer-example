@@ -11,7 +11,6 @@ const Document = ({ id, makeImagesResponsive }) => html`
     onLoad=${(e) => {
       /** @type {HTMLIFrameElement} */ const iframe = e.target
       const iframeDocument = iframe.contentWindow.document
-      iframe.style.height = `${iframeDocument.body.offsetHeight}px`
 
       if (makeImagesResponsive) {
         Array.from(iframeDocument.querySelectorAll('img')).forEach((img) => {
@@ -20,6 +19,9 @@ const Document = ({ id, makeImagesResponsive }) => html`
           img.style.height = img.parentNode.style.height = 'auto'
         })
       }
+
+      iframe.style.animation = 'fadeIn 600ms'
+      iframe.style.height = `${iframeDocument.body.offsetHeight}px`
     }}
   />
 `

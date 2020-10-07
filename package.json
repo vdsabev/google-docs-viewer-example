@@ -1,8 +1,10 @@
 {
   "version": "1.0.0",
-  "private": true,
   "scripts": {
-    "prebuild": "cd api && npm install && cd ..",
     "start": "netlify dev"
+  },
+  "dependencies": {
+    "axios": "0.20.0",
+    "lessttp": "0.2.3"
   }
 }
