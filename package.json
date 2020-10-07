@@ -2,6 +2,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "prebuild": "cd api && npm install && cd ..",
     "start": "netlify dev"
   }
 }
